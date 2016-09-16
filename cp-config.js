@@ -17,7 +17,7 @@ config.debug = true; // for additional logging / debugging
 config.watch = {
 
   // see https://github.com/askmike/gekko#supported-exchanges
-  exchange: 'Poloniex',
+  exchange: 'poloniex',
   currency: 'BTC',
   asset: '%coin'
 }
