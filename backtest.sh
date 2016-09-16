@@ -4,7 +4,7 @@ export COINS="VRC,LSK,VOX,1CR,XCP,BTM,NOTE,POT,SYNC,XVC,AMP,XDN,LBC,NBT,ETH,NXT,
 
 for coin in $(echo $COINS | sed "s/,/ /g")
 do
-    for day in {01..14}
+    for day in {01..01}
     do
         declare day_end=$(printf "%02d" $((day+1)))
         echo "$coin - $day - %coin - %day_start - %day_end" | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/$day_end/g"
