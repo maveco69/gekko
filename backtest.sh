@@ -3,16 +3,16 @@ export COINS="BURST,BBR,CGA,HUC,DIEM,BITS,NOBL,QORA,GRC,C2,NSR,EMC2,VTC,XST,QBK,
 
 for coin in $(echo $COINS | sed "s/,/ /g")
 do
-    for day in {01..10}
+    for day in {01..01}
     do
         declare day_end=$(printf "%02d" $((day+1)))
         echo "$coin - $day - %coin - %day_start - %day_end" | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/$day_end/g"
 
-        cat cp-config.js | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/$day_end/g" > configs/$coin.config.js
+        cat cp-config.js | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/02/g" > configs/$coin.config.js
 
-        node gekko.js --import --config configs/$coin.config.js
-        node gekko.js --backtest --config configs/$coin.config.js > logs/$coin.$day.log
+        node --max_old_space_size=4096 gekko.js --import --config configs/$coin.config.js
+        #node gekko.js --backtest --config configs/$coin.config.js > logs/$coin.$day.log
         #echo "2016-06-11 08:53:22 (INFO): (PROFIT REPORT) simulated yearly profit:   -435.53244 USD (-70.68152%)" > $i.log
-        egrep 'simulated profit' logs/$coin.$day.log >> profit.csv
+        #egrep 'simulated profit' logs/$coin.$day.log >> profit.csv
     done
 done
