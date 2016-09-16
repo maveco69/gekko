@@ -9,7 +9,7 @@ do
         declare day_end=$(printf "%02d" $((day+1)))
         echo "$coin - $day - %coin - %day_start - %day_end" | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/$day_end/g"
 
-        cat cp-config.js | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/$day_end/g" > configs/$coin.config.js
+        cat cp-config.js | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/15/g" > configs/$coin.config.js
 
         node --max_old_space_size=4096 gekko.js --import --config configs/$coin.config.js
         #node gekko.js --backtest --config configs/$coin.config.js > logs/$coin.$day.log
