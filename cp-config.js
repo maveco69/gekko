@@ -18,7 +18,7 @@ config.watch = {
 
   // see https://github.com/askmike/gekko#supported-exchanges
   exchange: 'Poloniex',
-  currency: 'USD',
+  currency: 'BTC',
   asset: '%coin'
 }
 
