@@ -13,7 +13,7 @@ do
         cat cp-config.js | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/$day_end/g" > configs/$coin.config.js
 
         node gekko.js --import --config configs/$coin.config.js
-        node gekko.js --backtest --config configs/$coin.config.js > logs/$coin.$day.log
+        #node gekko.js --backtest --config configs/$coin.config.js > logs/$coin.$day.log
         #echo "2016-06-11 08:53:22 (INFO): (PROFIT REPORT) simulated yearly profit:   -435.53244 USD (-70.68152%)" > $i.log
         profit=$(egrep 'simulated profit' logs/$coin.$day.log | sed "s/.*:.*:.*BTC (//g; s/%)//g; s/[[:blank:]]//g;")
         coin_profit=$(awk '{print $1+$2}' <<<"$profit $coin_profit")
