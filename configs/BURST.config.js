@@ -17,8 +17,8 @@ config.debug = true; // for additional logging / debugging
 config.watch = {
 
   // see https://github.com/askmike/gekko#supported-exchanges
-  exchange: 'Poloniex',
-  currency: 'USD',
+  exchange: 'poloniex',
+  currency: 'BTC',
   asset: 'BURST'
 }
 
@@ -89,8 +89,8 @@ config.adapters = {
 config.backtest = {
   adapter: 'sqlite',
   daterange: {
-    from: "2016-09-03 12:00:00",
-    to: "2016-09-04 12:00:00"
+    from: "2016-09-15 12:00:00",
+    to: "2016-09-16 12:00:00"
   },
   batchSize: 50
 }
@@ -101,8 +101,8 @@ config.backtest = {
 
 config.importer = {
   daterange: {
-    from: "2016-09-03 12:00:00",
-    to: "2016-09-04 12:00:00"
+    from: "2016-09-15 12:00:00",
+    to: "2016-09-16 12:00:00"
   }
 }
 
