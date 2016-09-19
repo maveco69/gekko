@@ -5,7 +5,7 @@ declare full_profit=0.0
 for coin in $(echo $COINS | sed "s/,/ /g")
 do
     declare coin_profit=0.0
-    for day in {15..19}
+    for day in {15..18}
     do
         declare day_end=$(printf "%02d" $((day+1)))
         echo "$coin - $day - %coin - %day_start - %day_end" | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/09/g; s/%day_start/$day/g; s/%day_end/$day_end/g"
