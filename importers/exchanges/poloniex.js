@@ -10,7 +10,7 @@ var dirs = util.dirs();
 
 var Fetcher = require(dirs.exchanges + 'poloniex');
 
-var batchSize = 60 * 24; // 24 hour
+var batchSize = 60 * 8; // 24 hour
 var overlapSize = 10; // 10 minutes
 
 // Helper methods

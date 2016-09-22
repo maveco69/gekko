@@ -17,7 +17,7 @@ declare full_profit=0.0
         #echo "2016-06-11 08:53:22 (INFO): (PROFIT REPORT) simulated yearly profit:   -435.53244 USD (-70.68152%)" > $i.log
         profit=$(egrep 'simulated profit' logs/$coin.$day.log | sed "s/.*:.*:.*BTC (//g; s/%)//g; s/[[:blank:]]//g;")
         day_profit=$(awk '{print $1+$2}' <<<"$profit $day_profit")
-        egrep 'simulated profit' logs/$coin.$day.log | sed "s/.*:.*:/$coin;$day;/g; s/BTC//g; s/(/;/g; s/)//g; s/[[:blank:]]//g;" >> profit.csv
+        #egrep 'simulated profit' logs/$coin.$day.log | sed "s/.*:.*:/$coin;$day;/g; s/BTC//g; s/(/;/g; s/)//g; s/[[:blank:]]//g;" >> profit.csv
         echo "$coin - $profit %"
     done
     echo "$day;$day_profit%" >> profit.csv
