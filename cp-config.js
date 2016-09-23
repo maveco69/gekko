@@ -30,7 +30,7 @@ config.tradingAdvisor = {
   enabled: true,
   method: 'candle',
   candleSize: 60*12,
-  historySize: 0,
+  historySize: 1,
   adapter: 'sqlite',
   talib: {
     enabled: false,
