@@ -5,7 +5,7 @@ do
     sleep 5;
     echo $coin
     cat cp-config.js | sed -e "s/%coin/$coin/g; s/%year/2016/g; s/%month/08/g; s/%day_start/01/g; s/%day_end/02/g" > configs/$coin.config.js
-    screen -d -m bash work-coin.sh $coin
+    screen -d -m -S $coin bash work-coin.sh $coin
     sleep 60;
-    killall screen
+    screen -X -S $coin quit
 done
