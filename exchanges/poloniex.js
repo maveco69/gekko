@@ -95,9 +95,8 @@ Trader.prototype.getFee = function(callback) {
 Trader.prototype.buy = function(amount, price, callback) {
   var set = function(err, result) {
     if(err || result.error)
-      return log.error('unable to buy:', err, result);
+      return log.debug('unable to buy:', err, result, amount, price);
 
-    log.debug('bought? ', result);
     callback(null, result.orderNumber);
   }.bind(this);
 
