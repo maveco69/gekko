@@ -97,6 +97,7 @@ Trader.prototype.buy = function(amount, price, callback) {
     if(err || result.error)
       return log.error('unable to buy:', err, result);
 
+    log.debug('bought? ', result);
     callback(null, result.orderNumber);
   }.bind(this);
 
