@@ -134,7 +134,7 @@ Manager.prototype.trade = function(what) {
       if(this.infinityOrderExchange)
         amount = 10000;
       else
-        amount = balance > 0.001 ? 0.001 : balance / this.ticker.ask;
+        amount = (balance > 0.001 ? 0.001 : balance) / this.ticker.ask;
 
       // can we just create a MKT order?
       if(this.directExchange)
