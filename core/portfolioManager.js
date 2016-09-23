@@ -129,12 +129,12 @@ Manager.prototype.trade = function(what) {
     var amount, price;
 
     if(what === 'BUY') {
-
+      var balance = this.getBalance(this.currency);
       // do we need to specify the amount we want to buy?
       if(this.infinityOrderExchange)
         amount = 10000;
       else
-        amount = this.getBalance(this.currency) / this.ticker.ask;
+        amount = balance > 0.001 ? 0.001 : balance / this.ticker.ask;
 
       // can we just create a MKT order?
       if(this.directExchange)

@@ -30,7 +30,7 @@ config.tradingAdvisor = {
   enabled: true,
   method: 'candle',
   candleSize: 60*12,
-  historySize: 10,
+  historySize: 0,
   adapter: 'sqlite',
   talib: {
     enabled: false,
@@ -39,9 +39,9 @@ config.tradingAdvisor = {
 };
 
 config.trader = {
-  enabled: false,
-  key: '',
-  secret: '',
+  enabled: true,
+  key: '6RPZ0YL4-IY77GAJ0-Q1OBAD2N-03XWPNYM',
+  secret: '320092f62fb128f5bf1f5f25cb81d6ee83115848703aaa91918dade3b9e72a9d9ad28deccb302e25a881505a55b121f963eb2bac70a462a930c7a7a8a3ea1c45',
   username: '' // your username, only required for specific exchanges.
 };
 
@@ -59,7 +59,7 @@ config.profitSimulator = {
   simulationBalance: {
     // these are in the unit types configured in the watcher.
     asset: 1,
-    currency: 0.02,
+    currency: 0.001,
   },
   // how much fee in % does each trade cost?
   fee: 0.25,
@@ -106,6 +106,6 @@ config.importer = {
   }
 }
 
-config['I understand that Gekko only automates MY OWN trading strategies'] = false;
+config['I understand that Gekko only automates MY OWN trading strategies'] = true;
 
 module.exports = config;
